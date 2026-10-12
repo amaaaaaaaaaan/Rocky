@@ -43,7 +43,7 @@ def send(message):
 
 print("Rocky listening...")
 
-with sd.InputStream(samplerate=SAMPLERATE, channels=1, callback=audio_callback, blocksize=FRAME_SIZE,device=0):
+with sd.InputStream(samplerate=SAMPLERATE, channels=1, callback=audio_callback, blocksize=FRAME_SIZE,device=1):
     triggered = False
     voiced_frames = []
     ring_buffer = collections.deque(maxlen=10)

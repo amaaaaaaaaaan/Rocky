@@ -6,7 +6,6 @@ client.connect(('localhost', 9999))
 a=input("Message: ")
 client.send(a.encode())
 client.close()
-
 #
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

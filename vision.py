@@ -5,7 +5,7 @@ import numpy as np
 import socket
 import threading
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('http://192.168.0')
 current_frame = None
 cascade= cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 lock=threading.Lock()
@@ -38,9 +38,6 @@ def listen():
         script = conn.recv(1024).decode()
         message=script
         print(f"Received: {message}")
-
-
-
 
 while True:
     thread=threading.Thread(target=listen,daemon=True)
